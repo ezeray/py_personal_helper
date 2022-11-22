@@ -44,6 +44,9 @@ class MonadicListOfResult(List[Result]):
     def unwrap(self) -> List[Result]:
         return self.value
 
+    def unwrap_all(self) -> List[Any]:
+        return [v.unwrap() for v in self.unwrap()]
+
     def is_failed(self) -> bool:
         return self.failed
 
