@@ -5,6 +5,7 @@ from itertools import compress
 
 import unittest
 
+
 class MonadicListOfResult(List[Result]):
     def __init__(
             self,
@@ -145,7 +146,7 @@ class MonadicListOfResult(List[Result]):
 
 
 class TestMonadicListClass(unittest.TestCase):
-    
+
     def test_init_passing_result(self):
         my_l = MonadicListOfResult([Result(x) for x in ["a", "b", "c"]])
         self.assertFalse(my_l.is_failed())
@@ -250,6 +251,6 @@ if __name__ == "__main__":
     # my_l = MonadicListOfResult(list(range(10)))
     # print(my_l)
     # print(my_l.bind(lambda x: x % 2 == 0))
-    
+
     # # print(my_l)
     # print(my_l.filter(lambda x: x % 2 == 0))
