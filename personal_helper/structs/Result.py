@@ -1,6 +1,7 @@
 from typing import Any, List, Dict
 import traceback
 
+import unittest
 
 class Result():
     def __init__(
@@ -55,4 +56,31 @@ class Result():
     def __or__(self) -> "List[Result]":
         return self.flatten()
 
+    def __eq__(self, __o: "Result") -> bool:
+        if not isinstance(__o, Result):
+            raise ValueError("Can only compare two Result objects")
+        return self.unwrap() == __o.unwrap()
+
 # TODO: write unit tests for this class
+class TestResultClass(unittest.TestCase):
+
+    def test_sucessful_assignment(self):
+        self.assertEqual(Result(2).unwrap(), 2)
+
+    def test_correct_binding(self):
+        one = Result(5).bind(lambda x: x ** 2)
+        self.assertEqual(one.unwrap(), 25)
+
+    def test_binding_with_rshift(self):
+        one = Result(5) >> (lambda x: x ** 2)
+        self.assertEqual(one.unwrap(), 25)
+
+    def test_flatten(self):
+        flattened_result = Result(5).bind(lambda x: [x, x ** 2]).flatten()
+        new_list = [Result(5), Result(25)]
+
+        self.assertListEqual(flattened_result, new_list)
+
+
+if __name__ == "__main__":
+    unittest.main()
