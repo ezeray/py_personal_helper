@@ -55,4 +55,9 @@ class Result():
     def __or__(self) -> "List[Result]":
         return self.flatten()
 
+    def __eq__(self, __o: "Result") -> bool:
+        if not isinstance(__o, Result):
+            raise ValueError("Can only compare two Result objects")
+        return self.unwrap() == __o.unwrap()
+
 # TODO: write unit tests for this class
