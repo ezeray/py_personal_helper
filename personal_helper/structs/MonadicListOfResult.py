@@ -136,6 +136,10 @@ class MonadicListOfResult(List[Result]):
     def __rshift__(self, func, *args, **kwargs):
         return self.bind_and_flatten(func, *args, **kwargs)
 
+    def __eq__(self, __o: "MonadicListOfResult") -> bool:
+        return self.unwrap() == __o.unwrap()
+
+
 
 # TODO: Write nit tests
 
