@@ -3,6 +3,7 @@ import traceback
 
 import unittest
 
+
 class Result():
     def __init__(
             self,
@@ -61,7 +62,7 @@ class Result():
             raise ValueError("Can only compare two Result objects")
         return self.unwrap() == __o.unwrap()
 
-# TODO: write unit tests for this class
+
 class TestResultClass(unittest.TestCase):
 
     def test_sucessful_assignment(self):
