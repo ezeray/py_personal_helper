@@ -10,7 +10,7 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
-    name="py_personal_helper",
+    name="personal_helper",
     version="0.1.0",
     description="Ezequiel Raigorodsky's personal helper package",
     long_description=long_description,
