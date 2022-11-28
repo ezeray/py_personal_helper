@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+personal_helper/__init__.py
+personal_helper.egg-info/PKG-INFO
+personal_helper.egg-info/SOURCES.txt
+personal_helper.egg-info/dependency_links.txt
+personal_helper.egg-info/top_level.txt
+personal_helper/structs/MonadicListOfResult.py
+personal_helper/structs/Result.py
+personal_helper/structs/__init__.py

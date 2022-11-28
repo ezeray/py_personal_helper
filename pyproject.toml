@@ -1,7 +1,7 @@
 [build-system]
 # These are the assumed default build requirements from pip:
 # https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
-requires = ["setuptools>=43.0.0", "wheel"]
+requires = ["setuptools>=51.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -22,6 +22,9 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
 ]
+keywords=["development", "helper", "utils"]
 
-[tool.setuptools.packages]
-find = {}
+# [tool.setuptools.packages.find]
+# find = {}
+# where = ["personal_helper"]
+

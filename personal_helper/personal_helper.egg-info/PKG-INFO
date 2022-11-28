@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: personal-helper
+Version: 0.1.0
+Summary: Ezequiel Raigorodsky's personal helper package
+Home-page: https://github.com/ezeray/py_personal_helper
+Author: Ezequiel Raigorodsky
+Author-email: Ezequiel Raigorodsky <ezequielraigorodsky@gmail.com>
+Keywords: development,helper,utils
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Helper
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.9, <4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# py_personal_helper
+This repo contains some classes and methods I've built to help me when doing personal projects.
