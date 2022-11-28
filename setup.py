@@ -28,8 +28,8 @@ setup(
         "Programming Language :: Python :: 3.11",
     ],
     keywords="development, helper, utils",
-    package_dir={"": "personal_helper"},
-    packages=find_packages(where="personal_helper"),
+    # package_dir={"": "personal_helper"},
+    # packages=find_packages(where="personal_helper"),
     python_requires=">=3.9, <4",
     # install_requires=[],
 )
