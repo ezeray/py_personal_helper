@@ -1,12 +1,12 @@
 from typing import Any, List, Dict
 import traceback
-from .Result import Result
+from Result import Result
 from itertools import compress
 
 import unittest
 
 
-class MonadicListOfResult(List[Result]):
+class MonadicListOfResult():
     def __init__(
             self,
             value: List[Any],
@@ -36,6 +36,10 @@ class MonadicListOfResult(List[Result]):
         self.failed_indices = [v.failed for v in value]
         self.failed = True if failed else any(self.failed_indices)
         self.failure = failure
+
+        # for iteration
+        self.counter: int = 0
+        self.iter_len: int = 0
 
     def __repr__(self) -> str:
         return (
@@ -144,6 +148,18 @@ class MonadicListOfResult(List[Result]):
     def __eq__(self, __o: "MonadicListOfResult") -> bool:
         return self.unwrap() == __o.unwrap()
 
+    def __iter__(self):
+        self.counter = 0
+        self.len_iter = len(self.value)
+        return self
+
+    def __next__(self):
+        if self.counter < self.len_iter:
+            obj = self.value[self.counter]
+            self.counter += 1
+            return obj
+        else:
+            raise StopIteration
 
 class TestMonadicListClass(unittest.TestCase):
 
