@@ -1,6 +1,6 @@
 from typing import Any, List, Dict
 import traceback
-from Result import Result
+from .Result import Result
 from itertools import compress
 
 import unittest
