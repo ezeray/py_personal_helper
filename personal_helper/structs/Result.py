@@ -1,13 +1,15 @@
-from typing import Any, List, Dict
+from typing import Any, List, Dict, Generic, TypeVar
 import traceback
 
 import unittest
 
+T = TypeVar("T")
+E = TypeVar("E")
 
-class Result():
+class Result(Generic[T]):
     def __init__(
             self,
-            value: Any,
+            value: T,
             failed: bool = False,
             failure: Dict[str, Any] | None = None,
     ) -> None:

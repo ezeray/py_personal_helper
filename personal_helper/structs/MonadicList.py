@@ -185,7 +185,7 @@ class MonadicList():
     def __rshift__(self, func, *args, **kwargs) -> "MonadicList":
         return self.bind(func, *args, **kwargs)
 
-    def __or__(self, func, *args, **kwargs) -> "MonadicList":
+    def __lshift__(self, func, *args, **kwargs) -> "MonadicList":
         return self.filter(func, *args, **kwargs)
 
     def __eq__(self, __o: "MonadicList") -> bool:
